@@ -1,0 +1,77 @@
+{
+	"name": "Twitter Timeline",
+	"version": "1.0",
+	"description": "Automatically add a twitter timeline to any theme.",
+	"demo": "http://koken.me",
+	"author": {
+		"name": "Koken",
+		"link": "http://koken.me"
+	},
+
+	"data": {
+		"username": {
+			"label": "Username",
+			"type": "string",
+			"info": "",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter a valid username"
+			}
+		},
+		"element_id": {
+			"label": "Element ID",
+			"info": "Enter the ID of the HTML element you want your timeline appended to. If you leave this blank it will be appended to the bottom of the window.",
+			"type": "string"
+		},
+		"width": {
+			"label": "Width",
+			"info": "Enter the width you would like your timeline to be. If left blank it will default to the width of the element.",
+			"type": "string"
+		},
+		"height": {
+			"label": "Height",
+			"info": "Enter the height you would like your timeline to be. If left blank it will default to the height of the element.",
+			"type": "string"
+		},
+		"footer": {
+			"label": "Footer",
+			"info": "Enter a string that you would like placed into the footer of the timeline. This will not be displayed if you turn minimal on.",
+			"type": "string"
+		},
+		"loop": {
+			"label": "Loop",
+			"info": "If you would like your tweets to cycle",
+			"type": "boolean"
+		},
+		"live": {
+			"label": "Live",
+			"info": "If you would like your timeline to update while users are on the page",
+			"type": "boolean"
+		},
+		"exclude_replies": {
+			"label": "Exclude replies",
+			"info": "Excludes @replies from appearing in your timeline",
+			"type": "boolean"
+		},
+		"minimal": {
+			"label": "Minimal",
+			"info": "Removes the header, footer, and user information for a cleaner, more minimalistic timeline",
+			"type": "boolean"
+		},
+		"behavior": {
+			"label": "Behavior",
+			"type": "select",
+			"info": "",
+			"options": [
+				{ "value": "default", "label": "Default" },
+				{ "value": "all", "label": "All" },
+				{ "value": "preloaded", "label": "Preloaded" }
+			]
+		},
+		"theme": {
+			"label": "Theme",
+			"info": "Enter a valid theme object to customize the appearance of your timeline. This must be a valid javascript object or it will be ignored.",
+			"type": "text"
+		}
+	}
+}
