@@ -1,4 +1,4 @@
-Google Analytics plugin for Koken
+Twitter Timeline plugin for Koken
 =================================
 
 This [Koken](http://koken.me) plugin automatically generates and inserts a twitter timeline into your published site, regardless of what theme you have selected.
