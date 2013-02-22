@@ -1,7 +1,7 @@
 Font Loader plugin for Koken
 =================================
 
-This [Koken](http://koken.me) plugin allows you to quickly and easily integrate web fonts from a variety of providers.
+This [Koken](http://koken.me) plugin allows you to quickly and easily integrate web fonts from a variety of providers (Typekit, Google, Fontdeck, Fonts.com).
 
 Requirements
 ------------
