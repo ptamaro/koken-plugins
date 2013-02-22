@@ -13,11 +13,11 @@ class KokenFontLoader extends KokenPlugin {
 	
 		$output = (object) array();
 	
-		if (isset($this->data->typekit)) {
+		if (!empty($this->data->typekit)) {
 			$output->typekit = (object) array('id' => $this->data->typekit);
 		}
 		
-		if (isset($this->data->google)) {
+		if (!empty($this->data->google)) {
 			$families = array();
 			$parts = explode(',',$this->data->google);
 			foreach($parts as $family) {
@@ -26,11 +26,11 @@ class KokenFontLoader extends KokenPlugin {
 			$output->google = (object) array('families' => $families);
 		}
 		
-		if (isset($this->data->fontdeck)) {
+		if (!empty($this->data->fontdeck)) {
 			$output->fontdeck = (object) array('id' => $this->data->fontdeck);
 		}
 		
-		if (isset($this->data->fontscom)) {
+		if (!empty($this->data->fontscom)) {
 			$output->monotype = (object) array('projectId' => $this->data->fontscom);
 		}
 		
