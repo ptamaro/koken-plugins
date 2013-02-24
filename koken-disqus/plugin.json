@@ -1,0 +1,22 @@
+{ 
+	"name": "Disqus",
+	"version": "1.0",
+	"description": "Automatically add Disqus comments to any theme.",
+	"demo": "http://koken.me",
+	"author": {
+		"name": "Koken",
+		"link": "http://koken.me"
+	},
+
+	"data": {
+		"shortname": {
+			"label": "Disqus Shortname",
+			"info": "You can find your shortname by logging into Disqus, clicking Settings, then selecting the General tab. It will be located under Site Identity.",
+			"type": "string",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter your Disqus shortname."
+			}
+		}
+	}
+}
