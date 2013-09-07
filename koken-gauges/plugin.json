@@ -1,0 +1,22 @@
+{ 
+	"name": "Gauges",
+	"version": "1.0",
+	"description": "Automatically add Gaug.es code to any theme.",
+	"demo": "http://laurendavissmith.com",
+	"author": {
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
+	},
+	
+	"data": {
+		"siteId": {
+			"label": "Site ID",
+			"info": "You can find your site id by logging into gaug.es, clicking the domain you want track, and clicking tracking code.",
+			"type": "string",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter the gaug.es site id for this domain."
+			}
+		}
+	}
+}
