@@ -42,12 +42,12 @@ class KokenPinboard extends KokenPlugin {
 			_list = $('<li/>');
 		_wrap.append(_link);
 		if ($date === 1 && $.timeago) { _date.text($.timeago(item.time)); _wrap.append(_date);  }
-		if (i === data.length-1) { _list.addClass('last'); }
 		items.append(_list.append(_wrap));
 		_list.on('click', function() {
 			window.location = item.href;
 		});
 	});
+	$(items).find('li:last').addClass('last');
 	$((($element !== "") ? $element: 'body')).append(items);
 })();
 </script>
