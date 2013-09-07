@@ -12,45 +12,48 @@ class KokenTwitterTimeline extends KokenPlugin {
 	{
 
 		$username = $this->data->username;
-		$element_id = (!empty($this->data->element_id)) ? str_replace( '#', '', $this->data->element_id ) : 'body';
-		$footer = $this->data->footer;
-		$theme = '{' . $this->data->theme . '}';
-		$loop = $this->data->loop;
-		$live = $this->data->live;
-		$height = (!empty($this->data->height)) ? $this->data->height : 0;
-		$width =  (!empty($this->data->width)) ? $this->data->width : 0;
-		$behavior = $this->data->behavior;
-		$minimal = ($this->data->minimal == 'true') ? '<style type="text/css">.twtr-hd, .twtr-user, .twtr-ft {display: none;}</style>' : '';
-
-		if ( $this->data->exclude_replies == 'true' ) {
-			$username .= '&exclude_replies=true';
+		$widgetId = $this->data->widgetId;
+		$element = '"' . $this->data->element . '"';
+		$theme = $this->data->theme;
+		$linkColor = ($this->data->linkColor !== '') ? $this->data->linkColor : '';
+		$width = ($this->data->width !== '') ? $this->data->width : '';
+		$height = ($this->data->height !== '') ? $this->data->height : '';
+		$borderColor = ($this->data->borderColor !== '') ? $this->data->borderColor : '';
+		$limit = ($this->data->limit !== '') ? $this->data->limit : '';
+		$chrome = '';
+		if ($this->data->noheader) {
+			$chrome .= 'noheader ';
+		}
+		if ($this->data->nofooter) {
+			$chrome .= 'nofooter ';
+		}
+		if ($this->data->noborders) {
+			$chrome .= 'noborders ';
+		}
+		if ($this->data->noscrollbar) {
+			$chrome .= 'noscrollbar ';
+		}
+		if ($this->data->transparent) {
+			$chrome .= 'transparent ';
 		}
 
 		echo <<<OUT
-<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-$minimal
-<script type="text/javascript">
-(function() {
-	var element = '$element_id',
-		height = ($height > 0) ? $height : 'auto',
-		width = ($width > 0) ? $width : 'auto';
-	new TWTR.Widget({
-		version: 2,
-		id: (element !== 'body') ? element : '',
-		type: 'profile',
-		rpp: 12,
-		interval: 30000,
-		width: width,
-		height: height,
-		footer: '$footer',
-		theme: !$.isEmptyObject($theme) && $theme,
-		features: {
-			loop: $loop,
-			live: $live,
-			behavior: '$behavior'
-		}
-	}).render().setUser('$username').start();
-})();
+<script>
+$(function() {
+	var widget = $('<a/>').addClass('twitter-timeline').attr({
+		'href': 'https://twitter.com/$username',
+		'data-link-color': "$linkColor",
+		'width': "$width",
+		'height': "$height",
+		'data-theme': "$theme",
+		'data-border-color': "$borderColor",
+		'data-tweet-limit': "$limit",
+		'data-chrome': "$chrome",
+		'data-widget-id': "$widgetId"
+	}).text('Tweets by @$username');
+	$((($element !== "") ? $element: 'body')).append(widget);
+});
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 </script>
 OUT;
 

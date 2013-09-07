@@ -15,13 +15,31 @@
 			"info": "",
 			"validation": {
 				"type": "not_empty",
-				"error_message": "Please enter a valid username"
+				"error_message": "Please enter a twitter username."
 			}
 		},
-		"element_id": {
-			"label": "Element ID",
-			"info": "Enter the ID of the HTML element you want your timeline appended to. If you leave this blank it will be appended to the bottom of the window.",
+		"widgetId": {
+			"label": "Widget ID",
+			"type": "string",
+			"info": "The widget ID is located in the url after you have created your widget from https://twitter.com/settings/widgets.",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter a widget id. Click more info for where this can be found."
+			}
+		},
+		"element": {
+			"label": "Element",
+			"info": "Enter the selector of the element for where you would like your timeline to appear. If you leave this blank it simply be appended to the html body.",
 			"type": "string"
+		},
+		"theme": {
+			"label": "Theme",
+			"type": "select",
+			"info": "Specifies whether your theme is dark or light to setup the style properly.",
+			"options": [
+				{ "value": "light", "label": "Light" },
+				{ "value": "dark", "label": "Dark" }
+			]
 		},
 		"width": {
 			"label": "Width",
@@ -33,45 +51,45 @@
 			"info": "Enter the height you would like your timeline to be. If left blank it will default to the height of the element.",
 			"type": "string"
 		},
-		"footer": {
-			"label": "Footer",
-			"info": "Enter a string that you would like placed into the footer of the timeline. This will not be displayed if you turn minimal on.",
-			"type": "string"
+		"linkColor": {
+			"label": "Link color",
+			"type": "string",
+			"info": "The hex code that you would like the color of the links in your tweets to appear."
 		},
-		"loop": {
-			"label": "Loop",
-			"info": "If you would like your tweets to cycle",
+		"borderColor": {
+			"label": "Border color",
+			"type": "string",
+			"info": "The hex code that you would like the color of the border for your timeline."
+		},
+		"limit": {
+			"label": "Tweet limit",
+			"type": "string",
+			"info": "The number of tweets you would like to appear in your timeline. The minimum amount is 1 and the maximum amount is 20."
+		},
+		"noheader": {
+			"label": "No header",
+			"info": "Removes the header from the timeline.",
 			"type": "boolean"
 		},
-		"live": {
-			"label": "Live",
-			"info": "If you would like your timeline to update while users are on the page",
+		"nofooter": {
+			"label": "No footer",
+			"info": "Removes the footer from the timeline.",
 			"type": "boolean"
 		},
-		"exclude_replies": {
-			"label": "Exclude replies",
-			"info": "Excludes @replies from appearing in your timeline",
+		"noborders": {
+			"label": "No border",
+			"info": "Removes all of the borders from the widget.",
 			"type": "boolean"
 		},
-		"minimal": {
-			"label": "Minimal",
-			"info": "Removes the header, footer, and user information for a cleaner, more minimalistic timeline",
+		"noscrollbar": {
+			"label": "No scrollbar",
+			"info": "Crops and hides the main timeline scrollbar, if visible.",
 			"type": "boolean"
 		},
-		"behavior": {
-			"label": "Behavior",
-			"type": "select",
-			"info": "",
-			"options": [
-				{ "value": "default", "label": "Default" },
-				{ "value": "all", "label": "All" },
-				{ "value": "preloaded", "label": "Preloaded" }
-			]
-		},
-		"theme": {
-			"label": "Theme",
-			"info": "Enter a valid theme object to customize the appearance of your timeline. This must be a valid javascript object or it will be ignored.",
-			"type": "text"
+		"transparent": {
+			"label": "Transparent",
+			"info": "Removes the background color from the timeline.",
+			"type": "boolean"
 		}
 	}
 }
