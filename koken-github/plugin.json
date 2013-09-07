@@ -1,0 +1,54 @@
+{ 
+	"name": "Github",
+	"version": "1.0",
+	"description": "Automatically add your Github timeline to any theme.",
+	"demo": "http://laurendavissmith.com",
+	"author": {
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
+	},
+
+	"data": {
+		"username": {
+			"label": "Github Username",
+			"type": "string",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter your Github username."
+			}
+		},
+		"client_id": {
+			"label": "API ID",
+			"type": "string",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter your API id."
+			}
+		},
+		"client_secret": {
+			"label": "API Secret",
+			"type": "string",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter your API secret."
+			}
+		},
+		"element": {
+			"label": "Element",
+			"type": "string",
+			"info": "Enter the selector of the element where you would like your commits to appear. If left blank it will simply be appended to the html body. You can also enter more than one selector if necessary by comma delimiting them (e.g. #header,#footer)."
+		},
+		"numOfItems": {
+			"label": "# of commits to show",
+			"info": "Select the maximum number of events that you would like shown.",
+			"type": "select",
+			"options": [
+				{"value": "1", "label": "1"},
+				{"value": "2", "label": "2"},
+				{"value": "5", "label": "5"},
+				{"value": "10", "label": "10"},
+				{"value": "All", "label": "All"}
+			]
+		}
+	}
+}
