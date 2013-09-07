@@ -1,0 +1,42 @@
+{ 
+	"name": "Pinboard",
+	"version": "1.0",
+	"description": "Automatically add your Pinboard bookmarks to any theme.",
+	"demo": "http://laurendavissmith.com",
+	"author": {
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
+	},
+
+	"data": {
+		"api_token": {
+			"label": "API Token",
+			"type": "text",
+			"info": "This token can be found at https://pinboard.in/settings/password",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "Please enter the api key for your account. It can be found at https://pinboard.in/settings/password"
+			}
+		},
+		"element": {
+			"label": "Element",
+			"type": "string",
+			"info": "Enter the selector of the element where you would like your bookmarks to appear. If left blank it will simply be appended to the html body. You can also enter more than one selector if necessary by comma delimiting them (e.g. #header,#footer)."
+		},
+		"numOfItems": {
+			"label": "# items to show",
+			"type": "string",
+			"info": "Enter the number of bookmarks that you would like to be shown. Leaving it blank will default to show all of your bookmarks."
+		},
+		"filterBy": {
+			"label": "Filter by tag",
+			"type": "string",
+			"info": "Enter up to 3 tags to filter your Pinboard results by."
+		},
+		"showDate": {
+			"label": "Show date pinned",
+			"type": "boolean",
+			"info": "If checked this will add the date for each bookmark to the output. This option requires that the timeago plugin is enabled."
+		}
+	}
+}
