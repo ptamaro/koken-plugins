@@ -1,4 +1,4 @@
-Disqus plugin for Koken
+Font Awesome plugin for Koken
 =================================
 
 This [Koken](http://koken.me) plugin allows you to quickly and easily integrate Font Awesome (http://fortawesome.github.io/Font-Awesome) into your themes.
