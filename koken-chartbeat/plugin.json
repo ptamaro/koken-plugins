@@ -1,0 +1,10 @@
+{ 
+	"name": "Chartbeat",
+	"version": "1.0",
+	"description": "Automatically add Chartbeat code to any theme.",
+	"demo": "http://laurendavissmith.com",
+	"author": {
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
+	}
+}
