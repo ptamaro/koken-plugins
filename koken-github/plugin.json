@@ -49,6 +49,11 @@
 				{"value": "10", "label": "10"},
 				{"value": "All", "label": "All"}
 			]
+		},
+		"showBranch": {
+			"label": "Show branch",
+			"info": "If selected this will display the branch that the commit was made to below your commit description.",
+			"type": "boolean"
 		}
 	}
 }

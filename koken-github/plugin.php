@@ -16,7 +16,7 @@ class KokenGithub extends KokenPlugin {
 		$username = $this->data->username;
 		$element = '"' . $this->data->element . '"';
 		$numOfItems = intval($this->data->numOfItems);
-		
+		$showBranch = (empty($this->data->showBranch)) ? 'false' : 'true';
 		$apiCreds = (isset($clientId) && isset($clientSecret)) ? '?client_id='.$clientId.'&client_secret='.$clientSecret : '';
 
 		echo <<<OUT
@@ -28,8 +28,9 @@ class KokenGithub extends KokenPlugin {
 			if (event.type !== 'PushEvent') { return false; }
 			$.each(event.payload.commits, function(j, commit) {
 				var status = $('<li/>'),
-					desc = $('<span/>').text(commit.message),
-					time = $('<em/>').text(($.timeago) ? $.timeago(event.created_at) : event.created_at);				
+					desc = $('<span/>').html(commit.message),
+					time = $('<em/>').text(($.timeago) ? $.timeago(event.created_at) : event.created_at);
+				if ($showBranch == true) { desc.append($('<strong/>').text(event.repo.name)) };
 				status.on('click', function() {
 					window.location = 'https://github.com/' + event.repo.name + '/commit/' + commit.sha;
 				});			
