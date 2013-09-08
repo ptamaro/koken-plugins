@@ -24,21 +24,22 @@ class KokenGithub extends KokenPlugin {
 (function() {
 	var html = $('<ul/>');
 	var buildTimeline = function(timeline) {
-		var loop = 0;
-		$.each(timeline, function(i,commit) {
-			if (loop >= $numOfItems) { return false; }
-			loop++;
-			if (commit.type !== 'PushEvent') { return false; }
-			var status = $('<li/>'),
-				desc = $('<span/>').text(commit.payload.commits[0].message),
-				time = $('<em/>').text(($.timeago) ? $.timeago(commit.created_at) : commit.created_at);				
-			status.on('click', function() {
-				window.location = 'https://github.com/' + commit.repo.name + '/commit/' + commit.payload.commits[0].sha;
-			});			
-			html.append(status.append(desc,time));
-			
+		$.each(timeline, function(i,event) {
+			if (event.type !== 'PushEvent') { return false; }
+			$.each(event.payload.commits, function(j, commit) {
+				var status = $('<li/>'),
+					desc = $('<span/>').text(commit.message),
+					time = $('<em/>').text(($.timeago) ? $.timeago(event.created_at) : event.created_at);				
+				status.on('click', function() {
+					window.location = 'https://github.com/' + event.repo.name + '/commit/' + commit.sha;
+				});			
+				html.append(status.append(desc,time));
+			});
 		});
-		$(html).find('li:last').addClass('last');
+		if ($numOfItems > 0) {
+			html.html(html.find('li').slice(0, $numOfItems));
+		}
+		html.find('li:last').addClass('last');
 		$((($element !== "") ? $element: 'body')).append(html);
 	}
 	$.ajax({
