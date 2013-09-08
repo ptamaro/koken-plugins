@@ -8,6 +8,11 @@ Requirements
 
 1. [Koken](http://koken.me) installation (0.2.0 or higher)
 
+Demonstration
+------------
+
+1. [Font Awesome Demonstration](http://laurendavissmith.com/pages/font-awesome-plugin-demo/)
+
 Installation
 ------------
 
