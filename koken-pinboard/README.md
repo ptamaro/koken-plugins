@@ -12,6 +12,11 @@ Requirements
 
 3. [Pinboard API token](https://pinboard.in/settings/password)
 
+Demonstration
+------------
+
+1. [Pinboard Demonstration](http://laurendavissmith.com/pages/pinboard-plugin-demo/)
+
 Installation
 ------------
 
