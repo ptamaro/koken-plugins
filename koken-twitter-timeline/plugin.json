@@ -2,10 +2,10 @@
 	"name": "Twitter Timeline",
 	"version": "1.0",
 	"description": "Automatically add a twitter timeline to any theme.",
-	"demo": "http://koken.me",
+	"demo": "http://laurendavissmith.com/pages/twitter-timeline-demo/",
 	"author": {
-		"name": "Koken",
-		"link": "http://koken.me"
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
 	},
 
 	"data": {

@@ -8,7 +8,12 @@ Requirements
 
 1. [Koken](http://koken.me) installation (0.2.0 or higher)
 
-2. [Twitter](www.twitter.com) account (available for free)
+2. [Twitter](http://www.twitter.com) account (available for free)
+
+Demonstration
+------------
+
+1. [Twitter Timeline Demonstration](http://laurendavissmith.com/pages/twitter-timeline-demo/)
 
 Installation
 ------------
