@@ -10,6 +10,11 @@ Requirements
 
 2. [Github](http://www.github.com) account
 
+Demonstration
+------------
+
+1. [Github Demonstration](http://laurendavissmith.com/pages/github-plugin-demo/)
+
 Installation
 ------------
 
