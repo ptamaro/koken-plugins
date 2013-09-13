@@ -13,6 +13,16 @@ class KokenPinboard extends KokenPlugin {
  		json_decode($str);
  		return (json_last_error() == JSON_ERROR_NONE);
 	}
+	
+	private function curl($url)
+	{
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data;
+	}
 
 	function render()
 	{
@@ -27,7 +37,7 @@ class KokenPinboard extends KokenPlugin {
 		if ($filterBy != '') {
 			$apiUrl .= '&tag=' . $filterBy;
 		}
-		$data = file_get_contents($apiUrl);
+		$data = $this->curl($apiUrl);
 		
 		if ($this->isJson($data)) {
 			echo <<<OUT
