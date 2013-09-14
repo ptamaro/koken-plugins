@@ -1,0 +1,18 @@
+{ 
+	"name": "Emojis",
+	"version": "1.0",
+	"description": "Allows you to use emojis from within your site.",
+	"demo": "http://www.koken.me",
+	"author": {
+		"name": "Lauren Davis Smith",
+		"link": "http://laurendavissmith.com"
+	},
+	
+	"data": {
+		"size": {
+			"label": "Size (px)",
+			"info": "If you would like to change the size that the icons appear at.",
+			"type": "string"
+		}
+	}
+}
