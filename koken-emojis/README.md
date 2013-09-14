@@ -1,4 +1,4 @@
-Pinboard plugin for Koken
+Emojis plugin for Koken
 =================================
 
 This [Koken](http://koken.me) plugin allows you to begin using emoji icons from within your site.
@@ -11,7 +11,7 @@ Requirements
 Demonstration
 ------------
 
-1. [Emojis Demonstration](http://laurendavissmith.com/pages/pinboard-plugin-demo/)
+1. [Emojis Demonstration](http://laurendavissmith.com/pages/emojis-plugin-demo/)
 
 Installation
 ------------
